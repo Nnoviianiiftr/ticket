@@ -7,7 +7,7 @@ export const NAV_LINKS = [
     key: "learn_more",
     label: "Learn More",
   },
-  { href: "#form", key: "create", label: "Create" },
+  { href: "/#form", key: "create", label: "Create" },
 ];
 
 export const FEATURES = [
@@ -15,60 +15,81 @@ export const FEATURES = [
     title: "Odoo",
     Image: "/odoo.png",
     description:
-      "Odoo is one of the leading open-source ERP software and a suite of apps that help you run your business seamlessly. It covers all of your company needs in all departments such as CRM, accounting, e-commerce, point of sale, and more. Each application is integrated seamlessly. Odoo is also a modular and flexible management software that can be easily installed at any company in different areas of industries from small-to-medium businesses to large enterprises. We can help you develop or customize on-demand applications suits your business affordably.",
+      "Have everything in one place with Odoo. As one of the best service providers, we offer a full package of Odoo ERP software and services.",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    Image: "/calendar.svg",
-    variant: "green",
+    title: "AvePoint",
+    Image: "/ave.jpg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
+      "Award-winning SaaS solutions provider of data governance, protection, backup, and migration technology with millions of users worldwide.",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    Image: "/tech.svg",
-    variant: "green",
+    title: "Microsoft 365",
+    Image: "/mic365.jpg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
+      "Microsoft Office 365 is a legendary collaboration and productivity tool in the cloud by Microsoft with some enhanced features included.",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    Image: "/location.svg",
-    variant: "orange",
+    title: "Google Workspace",
+    Image: "/gworkspace.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
+      "The all-new Google collaboration and productivity toolkits like Calendar, Gmail, Drive, Docs, Slides, Sheets, Meet, and more.",
+  },
+  {
+    title: "Acronis",
+    Image: "/acronis.jpg",
+    description:
+      "World-class cyber protection and integrated cloud-based backup to keep your business running for service providers, businesses, and individual users.",
+  },
+  {
+    title: "Microsoft Exchange",
+    Image: "/micexchange.jpg",
+    description:
+      "As a pioneer in Indonesia Exchange server provider, we offer the full spectrum of business customers with entry-level simplicity to enterprise-grade services.",
+  },
+  {
+    title: "cPanel",
+    Image: "/cpanel.png",
+    description:
+      "Automate all server management tasks easily which allows you to focus on empowering your customers' website experience.",
+  },
+  {
+    title: "Plesk",
+    Image: "/plesk.png",
+    description:
+      "All-rounder control panel with plenty of tools to access and organize web servers in a single integrated dashboard with complete flexibility and control.",
+  },
+  {
+    title: "Microsoft Teams",
+    Image: "/micteams.png",
+    description:
+      "Connect to people whether it is for a business purpose, educational purpose, or simply family time by bringing together them in one place to call, chat, and video conference.",
+  },
+  {
+    title: "Kemp",
+    Image: "/kemp.png",
+    description:
+      "A simple yet efficient load balancer service with a fully-featured web application firewall to keep your application up and running.",
+  },
+  {
+    title: "Microsoft SharePoint",
+    Image: "/micshare.png",
+    description:
+      "Manage your platform to share your files, data, or various resources with your co-workers seamlessly and maximize your velocity of knowledge together with Microsoft Sharepoint.",
   },
 ];
 
 //Learn More Page
 export const LEARNMORE = [
   {
-    title: "Lorem Ipsum",
-    icon: "/infinys.png",
-    variant: "green",
+    title: "Our Focus",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
+      "Driven by the commitment to provide the best possible service and support to every client, Infinyscloud continues to innovate and lead the way in Indonesia's cloud computing industry. We possess a deep understanding of the transformative power of technology, making the cloud accessible and affordable to businesses of all sizes so that every organization can benefit from the power of the cloud. Infinyscloud is determined to be at the forefront of the next wave of technological innovation and transformation.",
   },
   {
-    title: "Cloudkilat",
-    icon: "/cloud Kilat.png",
-    variant: "green",
+    title: "Embark your Journey to the Cloud",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    icon: "/tech.svg",
-    variant: "green",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    icon: "/location.svg",
-    variant: "orange",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Senectus et netus et malesuada fames ac turpis.",
+      "Infinyscloud offers comprehensive support throughout your entire journey, from consulting, strategy, migration, to optimization. Our proficiency in leading technologies across clouds, applications, data, and security enables your business to grow, improve efficiency, and pave the way for the future. By partnering with Infinyscloud, you can gain comprehensive support that guides you through continuous transformation and ensures that you're always a step ahead of the competition.",
   },
 ];
 
@@ -76,11 +97,18 @@ export const LEARNMORE = [
 export const FOOTER_LINKS = [
   {
     title: "Learn More",
-    links: ["About Infinys", "Terms of Service", "Privacy Policy"],
+    links: ["About Infinys", 
+            "Terms of Service", 
+            "Privacy Policy"],
   },
+];
+
+export const FOOTER_SERVICE = [
   {
     title: "Our Services",
-    links: ["Cloudkilat", "Odoo", "And More"],
+    links: ["Cloudkilat", 
+            // "Odoo", 
+            "And More"],
   },
 ];
 
