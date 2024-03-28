@@ -5,7 +5,7 @@ import React from "react";
 const Features = () => {
   return (
     <div className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
-      <div className="z-20 flex w-full flex-col lg:w-[80%]">
+      <div className="padding-container max-container w-full pb-24">
         <div className="relative">
           <Image
             src="/infinys.png"
@@ -45,9 +45,6 @@ type FeatureItem = {
 const FeatureItem = ({ title, icon, description }: FeatureItem) => {
   return (
     <li className="flex w-full flex-1 flex-col items-start">
-      {/* <div className="rounded-full p-4 lg:p-7 bg-green-90">
-        <Image src={icon} alt="icon" width={28} height={28} />
-      </div> */}
       <div>
         <Image src={icon} alt="icon" width={100} height={100} />
       </div>

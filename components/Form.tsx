@@ -6,8 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { z } from "zod";
 import ReCAPTCHA from "react-google-recaptcha";
-import { sendError } from "next/dist/server/api-utils";
-import { error } from "console";
 
 const CreateFormSchema = z.string();
 
@@ -28,10 +26,10 @@ const Form = () => {
     });
   };
 
-  const validateEmail = ((email: any) => {
+  const validateEmail = (email: any) => {
     const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return pattern.test(email);
-  });
+  };
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -120,12 +118,11 @@ const Form = () => {
 
   return (
     <section className="flexCenter w-full flex-col pb-[100px]">
-      <div className="get-app">
+      <div className="get-form">
         <div
           className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-12"
           id="form">
           <h2 className="bold-40 lg:bold-64">Create ticket now!</h2>
-          {/* <p className="regular-16 text-gray-10">lOREM IPSUM</p> */}
           <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
             <div className="formContainer">
               <form onSubmit={onSubmit} className="form">
@@ -136,9 +133,6 @@ const Form = () => {
                   onChange={handleChange}
                   required
                 />
-                {/* <div className="mt-1 text-xs text-red-500">
-                  {errors.find((error) => error.for === "name")?.message}
-                </div> */}
 
                 <input
                   type="text"
@@ -184,7 +178,7 @@ const Form = () => {
                   onClick={() => {
                     handleSubmit;
                     window.location.reload();
-                  }}> 
+                  }}>
                   Send
                 </button>
               </form>

@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
     <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
       <div className="hero" />
 
+      {/* relative is optional */}
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <Image
           src="/infinys.png"
@@ -51,18 +51,33 @@ const Hero = () => {
           <a
             href="#form"
             title="Create Ticket"
-            style={{display : 'inline-block', width: '100%', padding : '25px 0', backgroundColor: '#30AF5B', color: 'white', textAlign: 'center', textDecoration: 'none', borderRadius: '9999px'}}>
+            style={{
+              display: "inline-block",
+              width: "100%",
+              padding: "25px 0",
+              backgroundColor: "#30AF5B",
+              color: "white",
+              textAlign: "center",
+              textDecoration: "none",
+              borderRadius: "9999px",
+            }}>
             Create Ticket
           </a>
           <a
             href="/learn-more"
             title="Learn More"
-            style={{display : 'inline-block', width: '100%', padding : '25px 0', backgroundColor: 'GrayText', color: 'white', textAlign: 'center', textDecoration: 'none', borderRadius: '9999px'}}>
+            style={{
+              display: "inline-block",
+              width: "100%",
+              padding: "25px 0",
+              backgroundColor: "GrayText",
+              color: "white",
+              textAlign: "center",
+              textDecoration: "none",
+              borderRadius: "9999px",
+            }}>
             Learn More
           </a>
-
-          {/* <Button type="button" title="Create Ticket" variant="btn_green" />
-          <Button type="button" title="Learn More" variant="btn_white_text" /> */}
         </div>
       </div>
 
