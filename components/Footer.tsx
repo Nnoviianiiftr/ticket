@@ -29,7 +29,10 @@ const Footer = () => {
               <FooterColumn title={columns.title}>
                 <ul className="regular-14 flex flex-col gap-4 text-gray-30">
                   {columns.links.map((link) => (
-                    <Link target="__blank" href="https://portal.cloudkilat.com/" key={link}>
+                    <Link
+                      target="__blank"
+                      href="https://portal.cloudkilat.com/"
+                      key={link}>
                       {link}
                     </Link>
                   ))}
@@ -59,12 +62,7 @@ const Footer = () => {
                   target="_blank"
                   href="https://www.instagram.com/infinyscloud/"
                   className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                  <Image
-                    src="instagram.svg"
-                    alt="logo"
-                    width={24}
-                    height={24}
-                  />
+                  <Image src="instagram.svg" alt="logo" width={24} height={24} />
                   <span className="sr-only">Instagram Page</span>
                 </a>
 

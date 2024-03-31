@@ -97,18 +97,18 @@ export const LEARNMORE = [
 export const FOOTER_LINKS = [
   {
     title: "Learn More",
-    links: ["About Infinys", 
-            "Terms of Service", 
-            "Privacy Policy"],
+    links: ["About Infinys", "Terms of Service", "Privacy Policy"],
   },
 ];
 
 export const FOOTER_SERVICE = [
   {
     title: "Our Services",
-    links: ["Cloudkilat", 
-            // "Odoo", 
-            "And More"],
+    links: [
+      "Cloudkilat",
+      // "Odoo",
+      "And More",
+    ],
   },
 ];
 
@@ -119,8 +119,3 @@ export const FOOTER_CONTACT_INFO = {
     { label: "Email", value: "sales@isi.co.id" },
   ],
 };
-
-// export const SOCIALS = {
-//   title: "Social",
-//   links: ["facebook.svg", "/instagram.svg", "/twitter.svg", "/youtube.svg"],
-// };

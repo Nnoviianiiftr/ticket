@@ -23,7 +23,7 @@ const Camp = () => {
             Feel free to reach us out if you need further assistance or have any
             other requests!
           </p>
-          <Image 
+          <Image
             src="/quote.svg"
             alt="camp-2"
             width={186}
@@ -33,7 +33,7 @@ const Camp = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Camp
+export default Camp;
