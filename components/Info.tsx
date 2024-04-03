@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Camp = () => {
+const Info = () => {
   return (
     //relative is optional
     <section className="2xl:max-container realtive flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20">
@@ -36,4 +36,4 @@ const Camp = () => {
   );
 };
 
-export default Camp;
+export default Info;

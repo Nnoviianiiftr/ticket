@@ -14,10 +14,9 @@ const Guide = () => {
             Ready To Solve Your Problem
           </h2>
           <p className="regular-16 text-gray-30 xl:max-w-[520px]">
-            Only with Infinys, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Mollis nunc sed
-            id semper risus in hendrerit gravida rutrum. Senectus et netus et
-            malesuada fames ac turpis.
+            Infinys solves your business obstacles and creates value from our
+            technical proficiency in cloud engineering and solutions. We help
+            you build meaningful transformation and inspire innovation.
           </p>
         </div>
       </div>

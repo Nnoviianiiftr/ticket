@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from "react";
-import Camp from "@/components/Camp";
+import Info from "@/components/Info";
 import Features from "@/components/Features";
 import Form from "@/components/Form";
 import Guide from "@/components/Guide";
@@ -15,7 +15,7 @@ export default function Home() {
     <main ref={mainRef}>
       <Progressbar target={mainRef} />
       <Hero />
-      <Camp />
+      <Info />
       <Guide />
       <Features />
       <Form />
