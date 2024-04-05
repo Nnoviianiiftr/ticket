@@ -3,13 +3,8 @@
 import React, { FormEvent } from "react";
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
-import { z } from "zod";
+import { ToastContainer, toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
-
-const CreateFormSchema = z.string();
-
-CreateFormSchema.parse;
 
 const Form = () => {
   const [formState, setFormState] = useState({
@@ -19,6 +14,9 @@ const Form = () => {
     name: "",
     description: "",
   });
+
+  const [errors, setErrors] = useState<any[]>([]);
+
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormState({
       ...formState,
@@ -26,13 +24,38 @@ const Form = () => {
     });
   };
 
-  const validateEmail = (email: any) => {
-    const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return pattern.test(email);
-  };
-
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
+
+    // Validate form
+    const errors: any[] = [];
+
+    if (!captcha) {
+      errors.push("Please complete the captcha.");
+      toast.error("Please complete the captcha.", {
+        onClose: () => console.log("Toast closed"),
+      });
+      return;
+    }
+
+    if (formState.partner_name.length < 3) {
+      errors.push({ partner_name: "Partner name must be at least 3 characters." });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email_cc)) {
+      errors.push({ email_cc: "Please enter a valid email address." });
+    }
+
+    if (!/^\d+$/.test(formState.partner_phone)) {
+      errors.push({ partner_phone: "Partner phone must be numbers only." });
+    }
+
+    if (errors.length > 0) {
+      setErrors(errors);
+      return;
+    }
+
+    // Submit the form only when there are no errors
     try {
       console.log("formState", formState);
       const body = JSON.stringify({
@@ -52,7 +75,11 @@ const Form = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        toast.success("Successfully Sent");
+        toast.success("Successfully Sent", {
+          onClose: () => {
+            window.location.reload();
+          },
+        });
       } else {
         console.error("Error:", response.status);
         console.log(response);
@@ -60,61 +87,11 @@ const Form = () => {
     } catch (error) {
       console.log(error);
       toast.error("Error Sending, Please try again");
-      // console.log(response)
     }
   };
-
-  useEffect(() => {
-    toast.success("Successfully Send");
-    toast.error("There's something wrong");
-  }, []);
 
   const [captcha, setCaptcha] = useState<string | null>();
-
-  const [errors, setErrors] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const onSubmit = async (e: any) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const mySchema = z.object({
-        name: z.string().min(8),
-        email: z.coerce.string().email().min(5),
-      });
-
-      const response = mySchema.safeParse({
-        name: name,
-        email: "email",
-      });
-
-      //refine error
-      if (!response.success) {
-        let errArr: any[] = [];
-        const { errors: err } = response.error;
-        for (var i = 0; i < err.length; i++) {
-          errArr.push({ for: err[i].path[0], message: err[i].message });
-        }
-        setErrors([]);
-        throw err;
-      }
-
-      setErrors([]);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  (event: FormEvent) => {
-    event.preventDefault();
-    console.log(captcha);
-    if (captcha) {
-      console.log("ReCAPTCHA Verified!");
-    }
-  };
 
   return (
     <section className="flexCenter w-full flex-col pb-[100px]">
@@ -133,6 +110,9 @@ const Form = () => {
                   onChange={handleChange}
                   required
                 />
+                {errors.map((error: any, index: number) => (
+                  <p key={index} className="error">{error.partner_name}</p>
+                ))}
 
                 <input
                   type="text"
@@ -141,9 +121,9 @@ const Form = () => {
                   onChange={handleChange}
                   required
                 />
-                {/* <div className="mt-1 text-xs text-red-500">
-                  {errors.find((error) => error.for === "email")?.message}
-                </div> */}
+                {errors.map((error: any, index: number) => (
+                  <p key={index} className="error">{error.email_cc}</p>
+                ))}
 
                 <input
                   type="text"
@@ -152,6 +132,9 @@ const Form = () => {
                   onChange={handleChange}
                   required
                 />
+                {errors.map((error: any, index: number) => (
+                  <p key={index} className="error">{error.partner_phone}</p>
+                ))}
 
                 <input
                   type="text"
@@ -175,10 +158,9 @@ const Form = () => {
 
                 <button
                   type="submit"
-                  onClick={() => {
-                    handleSubmit;
-                    window.location.reload();
-                  }}>
+                  disabled={!captcha}
+                  onClick={onSubmit}
+                >
                   Send
                 </button>
               </form>
@@ -186,6 +168,7 @@ const Form = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

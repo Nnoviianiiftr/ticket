@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useRef } from "react";
 import Info from "@/components/Info";
